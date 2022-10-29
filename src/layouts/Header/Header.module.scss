@@ -1,0 +1,55 @@
+@import "../../assets/styles/index.scss";
+
+#header {
+  width: 100%;
+  height: 100vh;
+  padding: 0 5%;
+  background-image: url(../../assets/images/Header.png);
+  color: $theme-color;
+
+  div {
+    @include flex-col;
+    align-items: center;
+    transform: translateY(65%);
+    @extend .txtCenter;
+
+    h2 {
+      font-size: $h2-fontsize;
+      margin: 0;
+    }
+
+    p {
+      font-size: $h4-fontsize;
+      padding: 0 25%;
+      @extend .p-color;
+    }
+
+    form {
+      width: 25%;
+      position: relative;
+
+      input {
+        width: 100%;
+        @include input;
+        @extend .p-color;
+
+        &::-webkit-input-placeholder {
+          color: $p-color;
+        }
+      }
+
+      button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 4px;
+        @extend .radiusCycle;
+        width: 30px;
+        height: 30px;
+        background-color: $light-color;
+        color: $theme-color;
+        border: none;
+      }
+    }
+  }
+}

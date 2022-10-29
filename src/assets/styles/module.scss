@@ -1,0 +1,50 @@
+// color
+
+$light-color: #e58411;
+$light-color--hover: #F9EC7D;
+$buy-color: #8482FF;
+$theme-color: #ffffff;
+$theme-color2: #f7f7f7;
+$theme-color3: #eeeeee;
+$p-color: #eeeeeeb0;
+$p-color2: #1e1e1e;
+$plus-color: #0D1B39;
+$typeProduct--color: #8d8d8d;
+
+// font
+
+$font-family: "Gilroy-Regular, sans-serif";
+$p-opacity: 80%;
+$font-size--logo: 28px;
+$h2-fontsize: 80px;
+$h3-fontsize: 42px;
+$h4-fontsize: 24px;
+$h5-fontsize: 18px;
+$p-fontsize14: 14px;
+$p-fontsize16: 16px;
+$p-fontsize18: 18px;
+$p-fontsize12: 12px;
+
+// avatar
+
+$width-avatar: 50px;
+$height-avatar: 50px;
+
+// client
+
+$border-radius--img: 18px;
+$img-header--shadown: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+//extent 
+
+.txtCenter {
+    text-align: center;
+}
+
+.p-color {
+    color: $p-color;
+}
+
+.radiusCycle {
+    border-radius: 50%;
+}

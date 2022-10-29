@@ -1,0 +1,61 @@
+@import "../assets/styles/index.scss";
+
+.productItems {
+  height: 100%;
+  @include flex-col;
+  border-radius: $border-radius--img;
+
+  img {
+    width: 100%;
+    height: 55%;
+    background-color: #fafafa;
+    border-radius: 18px 18px 0 0;
+  }
+
+  .infProducts {
+    height: 45%;
+    padding: 10px 15px;
+    text-align: start;
+    margin-top: auto;
+    background-color: $theme-color;
+    border-radius: 0 0 18px 18px;
+    @include flex-col;
+    justify-content: space-between;
+
+    .infPdtItems {
+      h4 {
+        margin: 0;
+        word-break: break-all;
+        font-size: $h4-fontsize;
+        color: $plus-color;
+      }
+
+      p {
+        margin: 0;
+        color: $typeProduct--color;
+      }
+    }
+
+    .price {
+      width: 100%;
+      @include dp-flex;
+      padding: 0 5%;
+
+      p {
+        color: $plus-color;
+      }
+
+      button {
+        width: 40px;
+        height: 40px;
+        color: $theme-color;
+        background-color: $plus-color;
+        border-radius: 50%;
+        @include dp-flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+    }
+  }
+}

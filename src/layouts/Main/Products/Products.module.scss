@@ -1,0 +1,64 @@
+@import "../../../assets/styles/index.scss";
+
+#products {
+    text-align: center;
+    background-color: $theme-color2;
+    padding: 30px 6%;
+    @include flex-col;
+    align-items: center;
+
+    h3 {
+        font-size: $h3-fontsize;
+    }
+
+    #selecType {
+        padding: 8px 8px;
+        @include dp-flex;
+        justify-content: space-between;
+        background-color: $theme-color3;
+        border-radius: 24px;
+
+        .typeProduct {
+            padding: 10px 25px;
+            border-radius: 32px;
+            font-size: $p-fontsize18;
+            cursor: pointer;
+        }
+        
+        #selected {
+            transition: .2s;
+            background-color: $theme-color;
+        }
+    }
+
+    #listProduct {
+        @include dp-grid(1fr 1fr 1fr 1fr, auto);
+        padding: 30px 0;
+        gap: 40px;
+        position: relative;
+
+        #next, #prev {
+            display: block;
+            padding: 12px;
+            position: absolute;
+            top: 50%;
+            background-color: $theme-color;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        
+        #next {
+            right: 0;
+            transform: translate(50%, -50%);
+        }
+
+        #prev {
+            left: 0;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    #viewAll {
+        @include button
+    }
+}

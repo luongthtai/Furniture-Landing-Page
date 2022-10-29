@@ -1,0 +1,51 @@
+{
+  "content": [
+    {
+      "id": 1,
+      "title": "Luxury facilities",
+      "content": "You can get a workspace of the highst quality at an affordable price and still enjoy the facilities that are oly here."
+    },
+    {
+      "id": 2,
+      "title": "Affordable Price",
+      "content": "You can get a workspace of the highst quality at an affordable price and still enjoy the facilities that are oly here."
+    },
+    {
+      "id": 3,
+      "title": "Many Choices",
+      "content": "We provide many unique work space choices so that you can choose the workspace to your liking."
+    }
+  ],
+
+
+  "product": [
+    {
+      "id": "1",
+      "nameProduct": "Sakarias Armchair",
+      "typeProduct": "Chair",
+      "price": "392",
+      "image": "https://www.ikea.com/us/en/images/products/sakarias-armchair-black-sporda-dark-gray__0729767_pe737131_s5.jpg?f=s"
+    },
+    {
+      "id": "2",
+      "nameProduct": "Baltsar Chair",
+      "typeProduct": "Chair",
+      "price": "299",
+      "image": "https://img1.cgtrader.com/items/3247342/a741d3e35a/ikea-baltsar-chair-3d-model-max-obj-3ds-fbx.jpg"
+    },
+    {
+      "id": "3",
+      "nameProduct": "Anjay Chair",
+      "typeProduct": "Chair",
+      "price": "299",
+      "image": "https://cdn.shopify.com/s/files/1/0212/2670/products/Link_20Chair-lg_900x.jpg?v=1585153444"
+    },
+    {
+      "id": "4",
+      "nameProduct": "Nyantuy Chair",
+      "typeProduct": "Chair",
+      "price": "921",
+      "image": "https://cdn.shopify.com/s/files/1/0275/0332/9378/products/rattanchair_2000x.jpg?v=1624441113"
+    }
+  ]
+}

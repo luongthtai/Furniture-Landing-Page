@@ -1,0 +1,33 @@
+@mixin dp-flex {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin dp-grid($col, $row) {
+  display: grid;
+  grid-template: $row / $col;
+  align-items: center;
+}
+
+@mixin text-align($text: center) {
+  text-align: $text;
+}
+
+@mixin input {
+  background: rgba(255, 255, 255, 0.15);
+  border: 0.861538px solid rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(4px);
+  border-radius: 42px;
+  padding: 10px 8px 10px 20px;
+}
+
+@mixin button {
+  border: none;
+  color: $light-color;
+  background: none;
+}

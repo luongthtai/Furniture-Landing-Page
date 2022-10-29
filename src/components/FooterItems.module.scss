@@ -1,0 +1,20 @@
+@import "../assets/styles/index.scss";
+
+#footerItems {
+    padding: 0 20px;
+    @include flex-col;
+    justify-content: space-between;
+
+    h3 {
+        color: $light-color;
+        font-size: $p-fontsize18;
+        margin: 0;
+    }
+
+    div {
+        p {
+            margin-bottom: 0;
+            font-size: $p-fontsize16;
+        }
+    }
+}

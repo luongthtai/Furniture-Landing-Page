@@ -1,0 +1,57 @@
+@import "../assets/styles/index.scss";
+
+#navigation {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    @include dp-flex;
+    justify-content: space-between;
+    padding: 30px 5%;
+    color: $theme-color;
+
+    a {
+        text-decoration: none;
+        color: $theme-color;
+    }
+
+    #logo {
+        font-size: $font-size--logo;
+        margin: 0;
+    }
+
+    #navBar {
+        @include dp-flex;
+        width: 40%;
+        justify-content: space-between;
+        list-style-type: none;
+    }
+
+    #dropDown {
+        @include dp-flex;
+        justify-content: center;
+
+        i {
+            font-size: $p-fontsize12;
+            margin-left: 4px;
+        }
+    }
+
+    #bag {
+        position: relative;
+        p {
+            position: absolute;
+            margin: 0;
+            top: -4px;
+            right: -10px;
+            font-size: $p-fontsize12;
+            background-color: $light-color;
+            color: $theme-color;
+            @extend .radiusCycle;
+            width: 18px;
+            height: 18px;
+            @include dp-flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+@import "./assets/styles/index.scss";
+
+* {
+    box-sizing: border-box;
+    font-family: $font-family;
+}
+
+body {
+    margin: 0;
+
+    button {
+        cursor: pointer;
+    }
+}

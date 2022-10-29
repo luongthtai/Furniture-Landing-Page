@@ -1,0 +1,15 @@
+@import "../../../assets/styles/index.scss";
+
+#infoUs {
+    padding: 30px 5%;
+    @include dp-grid(1fr 1fr 1fr 1fr, auto);
+    gap: 20px;
+
+    #title {
+        h3 {
+            font-size: $h3-fontsize;
+            margin: 0;
+            padding-right: 50px;
+        }
+    }
+}
