@@ -6,11 +6,21 @@ footer {
   padding: 50px 8%;
   gap: 40px;
 
+  @media only screen and (max-width: 992px) {
+    flex-direction: column;
+    padding: 50px 30px;
+    align-items: flex-start;
+  }
+
   #page {
     @include flex-col;
     justify-content: space-between;
     width: 35%;
     padding-right: 100px;
+
+    @media only screen and (max-width: 992px) {
+      width: 100%;
+    }
 
     img {
       width: 100px;
@@ -21,7 +31,10 @@ footer {
     width: 65%;
     @include dp-flex;
     justify-content: space-between;
-    padding: 0 30px;
+
+    @media only screen and (max-width: 992px) {
+      width: 100%;
+    }
 
     h4 {
       color: $light-color;

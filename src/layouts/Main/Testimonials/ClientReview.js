@@ -10,13 +10,9 @@ export default function ClientReview() {
   const background = [client1, client2, client3];
 
   useEffect(() => {
-    const getApi = async () => {
-      await fetch("http://localhost:3000/client")
-        .then((response) => response.json())
-        .then((data) => setClient(data));
-    };
-
-    getApi();
+    fetch("http://localhost:3000/client")
+      .then((response) => response.json())
+      .then((data) => setClient(data));
   }, []);
 
   return (

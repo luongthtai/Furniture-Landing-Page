@@ -23,6 +23,8 @@
     justify-content: space-between;
 
     .infPdtItems {
+      overflow: hidden;
+
       h4 {
         margin: 0;
         word-break: break-all;

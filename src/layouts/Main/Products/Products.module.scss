@@ -7,6 +7,10 @@
     @include flex-col;
     align-items: center;
 
+    @media only screen and (max-width: 1195px) {
+        padding: 30px 4%;   
+    }
+
     h2 {
         font-size: $h3-fontsize;
     }
@@ -36,6 +40,15 @@
         padding: 30px 0;
         gap: 40px;
         position: relative;
+
+        @media only screen and (max-width: 1195px) {
+            @include dp-grid(1fr 1fr 1fr, auto);
+            gap: 20px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            @include dp-grid(1fr 1fr, auto);
+        }
 
         #next, #prev {
             display: block;

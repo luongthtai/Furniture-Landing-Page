@@ -5,6 +5,10 @@
     width: 50%;
     padding-right: 10%;
 
+    @media only screen and (max-width: 992px) {
+        padding: 0;
+      }
+
     h4 {
         color: $light-color;
         font-size: $p-fontsize18;

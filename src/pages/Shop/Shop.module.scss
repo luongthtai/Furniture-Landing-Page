@@ -1,0 +1,8 @@
+@import "../../assets/styles/index.scss";
+
+#shopPage {
+    @include dp-flex;
+    height: 100vh;
+    justify-content: center;
+}
+

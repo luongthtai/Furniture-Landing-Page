@@ -1,0 +1,7 @@
+@import "../../assets/styles/index.scss";
+
+#contactPage {
+    @include dp-flex;
+    justify-content: center;
+    height: 100vh;
+}

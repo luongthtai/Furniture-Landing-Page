@@ -19,7 +19,6 @@
   padding: 15px 10px 10px;
   margin: 0 10px;
   bottom: 15px;
-  height: 45%;
 
   .avarta {
     position: absolute;
@@ -52,7 +51,7 @@
       font-size: $p-fontsize14;
       color: $p-color2;
       display:-webkit-box;
-      -webkit-line-clamp:3;
+      -webkit-line-clamp:2;
       -webkit-box-orient: vertical;
       overflow: hidden;
       text-overflow: ellipsis;
