@@ -18,7 +18,7 @@ export default function InfoUs() {
   return (
     <section id={styles.infoUs}>
       <div id={styles.title}>
-        <h3>Why Choosing Us</h3>
+        <h2>Why Choosing Us</h2>
       </div>
 
       {content.map((item) => (

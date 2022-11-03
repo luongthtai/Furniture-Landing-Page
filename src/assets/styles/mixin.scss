@@ -31,3 +31,8 @@
   color: $light-color;
   background: none;
 }
+
+@mixin flex-spBetween {
+  display: flex;
+  justify-content: space-between;
+}

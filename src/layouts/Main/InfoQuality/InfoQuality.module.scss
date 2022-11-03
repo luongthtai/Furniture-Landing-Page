@@ -1,0 +1,7 @@
+@import "../../../assets/styles/index.scss";
+
+#infoQuality {
+    @include flex-col;
+    gap: 300px;
+    padding: 300px 0;
+}

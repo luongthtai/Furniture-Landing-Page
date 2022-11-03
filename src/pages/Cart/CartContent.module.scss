@@ -1,0 +1,79 @@
+@import "../../assets/styles/index.scss";
+
+.cartContent {
+  display: flex;
+  padding: 50px 5%;
+
+  h2 {
+    border-bottom: 1px solid $typeProduct--color;
+    padding-bottom: 10px;
+  }
+
+  .shoppingCart {
+    border-right: 1px solid $typeProduct--color;
+    width: 65%;
+    padding: 0 5%;
+
+    table {
+      width: 100%;
+      margin: 50px 0;
+      text-align: center;
+
+      th {
+        padding: 0 20px;
+      }
+
+      td {
+        border-bottom: 1px solid $typeProduct--color;
+        padding: 20px;
+
+        .deleteProduct {
+          cursor: pointer;
+          color: red;
+        }
+
+        .quantity {
+          padding: 10px 0;
+          border: 1px solid $typeProduct--color;
+        }
+      }
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .cartTotals {
+    width: 35%;
+    padding: 0 5%;
+    @include flex-col;
+
+    .containerTotals {
+      .subtotal,
+      .formRadio,
+      .total {
+        @include flex-spBetween;
+      }
+
+      .shipping {
+        @include flex-col;
+        text-align: end;
+
+        input {
+          margin-left: 10px;
+        }
+      }
+
+      button {
+        margin-top: 20px;
+        width: 100%;
+        background-color: $plus-color;
+        border: none;
+        color: $theme-color;
+        padding: 10px;
+        border-radius: 5px;
+      }
+    }
+  }
+}

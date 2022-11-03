@@ -2,14 +2,15 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import styles from "./Nav.module.scss";
+import logo from "../assets/images/Panto.png"
 
-export default function Nav() {
+export default function Nav(props) {
   const productNumber = useSelector(state => state.count.countProduct)
 
   return (
-    <div id={styles.navigation}>
+    <div id={styles.navigation} style={{backgroundColor: props.backgroundColor, position: props.position}}>
       <Link to="/">
-        <h1 id={styles.logo}>Panto</h1>
+        <img id={styles.logo} src={logo} alt="logo"/>
       </Link>
 
       <ul id={styles.navBar}>
@@ -26,8 +27,8 @@ export default function Nav() {
       </ul>
 
       <div id={styles.bag}>
-        <i className="fa-solid fa-bag-shopping"></i>
-        <p id={styles.productNumber}>{productNumber}</p>
+        <Link to="/cart"><i className="fa-solid fa-bag-shopping"></i></Link>
+        <p id={styles.productNumber} style={{backgroundColor: props.colorNumber}}>{productNumber}</p>
       </div>
     </div>
   );

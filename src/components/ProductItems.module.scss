@@ -36,10 +36,11 @@
       }
     }
 
-    .price {
+    .buy {
       width: 100%;
       @include dp-flex;
       padding: 0 5%;
+      justify-content: space-between;
 
       p {
         color: $plus-color;
@@ -54,6 +55,7 @@
         @include dp-flex;
         justify-content: center;
         align-items: center;
+        border: none;
       }
       
     }

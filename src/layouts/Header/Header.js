@@ -8,7 +8,7 @@ export default function Header() {
       <Nav />
       <div id={styles.header}>
         <div>
-          <h2>Make Your Interior More Minimalistic & Modern</h2>
+          <h1>Make Your Interior More Minimalistic & Modern</h1>
           <p>
             Turn your room with panto into a lot more minimalist and modern with
             ease and speed

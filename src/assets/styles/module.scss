@@ -1,19 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;0,800;1,800&family=Sarabun:wght@100;200;300;400;500;600;700;800&display=swap');
 // color
 
 $light-color: #e58411;
-$light-color--hover: #F9EC7D;
-$buy-color: #8482FF;
+$light-color--hover: #f9ec7d;
+$buy-color: #8482ff;
 $theme-color: #ffffff;
 $theme-color2: #f7f7f7;
 $theme-color3: #eeeeee;
 $p-color: #eeeeeeb0;
 $p-color2: #1e1e1e;
-$plus-color: #0D1B39;
+$plus-color: #0d1b39;
 $typeProduct--color: #8d8d8d;
 
 // font
 
-$font-family: "Gilroy-Regular, sans-serif";
+$font-family: 'Poppins', sans-serif;
 $p-opacity: 80%;
 $font-size--logo: 28px;
 $h2-fontsize: 80px;
@@ -35,16 +36,16 @@ $height-avatar: 50px;
 $border-radius--img: 18px;
 $img-header--shadown: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-//extent 
+//extent
 
 .txtCenter {
-    text-align: center;
+  text-align: center;
 }
 
 .p-color {
-    color: $p-color;
+  color: $p-color;
 }
 
 .radiusCycle {
-    border-radius: 50%;
+  border-radius: 50%;
 }

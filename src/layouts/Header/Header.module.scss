@@ -10,10 +10,10 @@
   div {
     @include flex-col;
     align-items: center;
-    transform: translateY(65%);
+    transform: translateY(40%);
     @extend .txtCenter;
 
-    h2 {
+    h1 {
       font-size: $h2-fontsize;
       margin: 0;
     }

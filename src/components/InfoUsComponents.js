@@ -5,7 +5,7 @@ export default function InfoUsComponents(props) {
   return (
     <>
         <div className={styles.infoUsItems}>
-            <h4>{props.title}</h4>
+            <h3>{props.title}</h3>
             <p>{props.content}</p>
             <button>More Info</button>
         </div>

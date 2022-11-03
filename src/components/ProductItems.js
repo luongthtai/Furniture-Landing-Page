@@ -1,7 +1,11 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { countProductPlus } from "../redux/actition/countProduct";
 import styles from "./ProductItems.module.scss";
 
 export default function ProductItems(props) {
+  const dispatch = useDispatch()
+
   return (
     <div className={styles.productItems}>
       <img src={props.imgProduct} alt={props.name} />
@@ -13,10 +17,10 @@ export default function ProductItems(props) {
           <div className={styles.vote}>xxxxx</div>
         </div>
 
-        <div className={styles.price}>
-          <p className={styles.price}>{props.price}</p>
+        <div className={styles.buy}>
+          <p className={styles.price}><i className="fa-solid fa-dollar-sign"></i>{props.price}</p>
           <button type="button">
-            <i className="fa-solid fa-plus"></i>
+            <i className="fa-solid fa-plus" onClick={() =>{ dispatch(countProductPlus(props.id))}}></i>
           </button>
         </div>
       </div>

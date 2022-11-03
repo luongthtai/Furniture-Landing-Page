@@ -11,18 +11,14 @@ export default function Products() {
   };
 
   useEffect(() => {
-    async function getApi() {
-      await fetch("http://localhost:3000/product")
-        .then((response) => response.json())
-        .then((data) => setProductItems(data));
-    }
-
-    getApi();
+    fetch("http://localhost:3000/product")
+      .then((response) => response.json())
+      .then((data) => setProductItems(data))
   }, []);
 
   return (
     <section id={styles.products}>
-      <h3>Best Selling Product</h3>
+      <h2>Best Selling Product</h2>
 
       <div id={styles.selecType}>
         <div
@@ -59,6 +55,7 @@ export default function Products() {
         {productItems.map((item) => (
           <ProductItems
             key={item.id}
+            id={item.id}
             name={item.nameProduct}
             type={item.typeProduct}
             price={item.price}
@@ -74,7 +71,9 @@ export default function Products() {
         </span>
       </div>
 
-      <button type="button" id={styles.viewAll}>View All</button>
+      <button type="button" id={styles.viewAll}>
+        View All
+      </button>
     </section>
   );
 }

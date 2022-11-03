@@ -1,0 +1,11 @@
+@import "../../../../assets/styles/index.scss";
+
+#componentQualityTop {
+  @include dp-flex;
+  gap: 50px;
+  padding-right: 5%;
+
+  img {
+    width: 50%;
+  }
+}

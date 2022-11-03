@@ -1,14 +1,15 @@
 const initialState = {
   countProduct: 0,
-  name: "tai"
+  bought: []
 }
 
 export const countProductReducer = (state = initialState, action) => {
   switch (action.type) {
     case "PLUS":
-      return state + 1;
-    case "PREV":
-      return state - 1;
+      return {
+        countProduct: state.countProduct + 1,
+        bought: [action.payload]
+      }
     default:
       return state;
   }
