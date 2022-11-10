@@ -1,0 +1,69 @@
+.slick-prev,
+.slick-next {
+  font-size: 0;
+
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+
+  display: block;
+
+  width: 50px;
+  height: 50px;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+
+  cursor: pointer;
+
+  color: black;
+  border: none;
+  border-radius: 50%;
+}
+
+.slick-prev {
+  left: -25px;
+}
+
+.slick-next {
+  right: -25px;
+}
+
+.slick-prev:before {
+  content: "\f053";
+  font-family: "FontAwesome";
+  font-size: 22px;
+}
+.slick-next:before {
+  content: "\f054";
+  font-family: "FontAwesome";
+  font-size: 22px;
+}
+
+.slick-slider {
+  width: 100%;
+  position: relative;
+  display: block;
+}
+
+.slick-list {
+  padding: 50px 0;
+  display: block;
+  overflow: hidden;
+}
+
+.slick-track {
+  position: relative;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.slick-slide {
+  height: 100%;
+  width: 100%;
+}
+
+.slick-slider img {
+  height: 346px;
+}

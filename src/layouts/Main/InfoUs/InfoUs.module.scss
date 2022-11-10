@@ -21,3 +21,19 @@
         }
     }
 }
+
+.infoUsItems {
+    h3 {
+        font-size: $h4-fontsize;
+    }
+
+    p {
+        font-size: $p-fontsize16;
+        color: $p-color2;
+    }
+
+    button {
+        @include button;
+        padding: 0;
+    }
+}

@@ -9,6 +9,15 @@
   padding: 30px 5%;
   color: $theme-color;
 
+  #menu {
+    display: none;
+    transform: translateX(-100%);
+
+    @media only screen and (max-width: 1195px) {
+      display: block;
+    }
+  }
+
   a {
     text-decoration: none;
     color: $theme-color;

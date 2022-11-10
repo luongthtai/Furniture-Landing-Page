@@ -1,77 +1,166 @@
 @import "../../../assets/styles/index.scss";
 
 #products {
-    text-align: center;
-    background-color: $theme-color2;
-    padding: 30px 6%;
-    @include flex-col;
-    align-items: center;
+  text-align: center;
+  background-color: $theme-color2;
+  padding: 30px 6%;
+  @include flex-col;
+  align-items: center;
+  position: relative;
+
+  @media only screen and (max-width: 1195px) {
+    padding: 30px 4%;
+  }
+
+  h2 {
+    font-size: $h3-fontsize;
+  }
+
+  #selecType {
+    padding: 8px 8px;
+    @include dp-flex;
+    justify-content: space-between;
+    background-color: $theme-color3;
+    border-radius: 24px;
+
+    .typeProduct {
+      padding: 10px 25px;
+      border-radius: 32px;
+      font-size: $p-fontsize18;
+      cursor: pointer;
+    }
+
+    #selected {
+      transition: 0.2s;
+      background-color: $theme-color;
+    }
+  }
+
+  #listProduct {
+    display: grid;
+    padding: 30px 0;
+    gap: 20px;
+    position: relative;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     @media only screen and (max-width: 1195px) {
-        padding: 30px 4%;   
+      gap: 20px;
     }
 
-    h2 {
-        font-size: $h3-fontsize;
+    @media only screen and (max-width: 768px) {
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+
+  #next,
+  #prev {
+    display: block;
+    width: 50px;
+    height: 50px;
+    padding: 12px;
+    position: absolute;
+    top: 50%;
+    background-color: $theme-color;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  #next {
+    right: 6%;
+    transform: translate(50%, 50%);
+    @media only screen and (max-width: 1195px) {
+      right: 4%;
+    }
+  }
+
+  #prev {
+    left: 6%;
+    transform: translate(-50%, 50%);
+
+    @media only screen and (max-width: 1195px) {
+      left: 4%;
+    }
+  }
+
+  #viewAll {
+    @include button;
+  }
+}
+
+.productItems {
+  height: 100%;
+  width: 100%;
+  @include flex-col;
+  border-radius: $border-radius--img;
+  background-color: $theme-color;
+
+  img {
+    width: 100%;
+    height: 55%;
+    background-color: #fafafa;
+    border-radius: 18px 18px 0 0;
+  }
+
+  .infProducts {
+    height: 40%;
+    padding: 10px 15px;
+    text-align: start;
+    margin-top: auto;
+    background-color: $theme-color;
+    border-radius: 0 0 18px 18px;
+    @include flex-col;
+    justify-content: space-between;
+
+    .infPdtItems {
+      overflow: hidden;
+
+      h4 {
+        margin: 0;
+        word-break: break-all;
+        font-size: $h4-fontsize;
+        color: $plus-color;
+      }
+
+      p {
+        margin: 0;
+        color: $typeProduct--color;
+      }
     }
 
-    #selecType {
-        padding: 8px 8px;
+    .buy {
+      width: 100%;
+      @include dp-flex;
+      padding: 0 5%;
+      justify-content: space-between;
+
+      p {
+        color: $plus-color;
+      }
+
+      button {
+        width: 40px;
+        height: 40px;
+        color: $theme-color;
+        background-color: $plus-color;
+        border-radius: 50%;
         @include dp-flex;
-        justify-content: space-between;
-        background-color: $theme-color3;
-        border-radius: 24px;
+        justify-content: center;
+        align-items: center;
+        border: none;
+      }
 
-        .typeProduct {
-            padding: 10px 25px;
-            border-radius: 32px;
-            font-size: $p-fontsize18;
-            cursor: pointer;
-        }
-        
-        #selected {
-            transition: .2s;
-            background-color: $theme-color;
-        }
+      #bought {
+        background-color: rgba(52, 180, 52, 0.975);
+      }
     }
-
-    #listProduct {
-        @include dp-grid(1fr 1fr 1fr 1fr, auto);
-        padding: 30px 0;
-        gap: 40px;
-        position: relative;
-
-        @media only screen and (max-width: 1195px) {
-            @include dp-grid(1fr 1fr 1fr, auto);
-            gap: 20px;
-        }
-
-        @media only screen and (max-width: 768px) {
-            @include dp-grid(1fr 1fr, auto);
-        }
-
-        #next, #prev {
-            display: block;
-            padding: 12px;
-            position: absolute;
-            top: 50%;
-            background-color: $theme-color;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-        
-        #next {
-            right: 0;
-            transform: translate(50%, -50%);
-        }
-
-        #prev {
-            left: 0;
-            transform: translate(-50%, -50%);
-        }
-    }
-
-    #viewAll {
-        @include button
-    }
+  }
 }

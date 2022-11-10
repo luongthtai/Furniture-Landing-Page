@@ -1,5 +1,5 @@
 import React from 'react'
-import ClientReview from './ClientReview'
+import ClientReview from '../../../components/ClientReview/ClientReview'
 import styles from "./Testimonials.module.scss"
 
 export default function Testimonials() {

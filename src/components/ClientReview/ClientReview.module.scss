@@ -1,0 +1,62 @@
+@import "../../assets/styles/index.scss";
+
+.clientItems {
+  position: relative;
+}
+
+#background {
+width: 100%;
+height: 100%;
+}
+
+.clientContent {
+@include flex-col;
+justify-content: space-between;
+position: absolute;
+background-color: $theme-color;
+border-radius: 18px;
+text-align: center;
+padding: 15px 10px 10px;
+margin: 0 10px;
+bottom: 15px;
+
+.avarta {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  top: 0;
+  left: 50%;
+  padding: 8px;
+  background-color: $theme-color;
+}
+
+.client {
+  bottom: 8px;
+  overflow: hidden;
+
+  h5 {
+    font-size: $p-fontsize18;
+    margin-bottom: 0;
+  }
+
+  #name {
+    font-size: $p-fontsize12;
+    color: $p-color2;
+    margin-top: 5px;
+  }
+
+  #cmt {
+    font-size: $p-fontsize14;
+    color: $p-color2;
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+  }
+}
+}
+

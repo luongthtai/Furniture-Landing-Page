@@ -3,5 +3,55 @@
 #contactPage {
     @include dp-flex;
     justify-content: center;
-    height: 100vh;
+    background-color: $theme-color3;
+    padding: 50px 0;
+
+    form {
+        text-align: center;
+        background-color: $theme-color;
+        padding: 40px;
+
+        h2 {
+            color: $plus-color;
+        }
+
+        label {
+            text-align: start;
+            @include flex-col;
+            padding: 10px 0;
+            font-size: $p-fontsize16;
+
+            #name {
+                @include dp-flex;
+                justify-content: space-between;
+
+                input {
+                    width: 48%;
+                }
+            }
+        }
+
+        input, textarea {
+            margin: 5px 0;
+            padding: 10px;
+            border: 1px solid $theme-color3;
+
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+                display: none;
+            }
+        }
+
+        textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        button {
+            padding: 5px 15px;
+            border: none;
+            background-color: $plus-color;
+            color: $theme-color;
+        }
+    }
 }

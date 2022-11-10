@@ -1,10 +1,13 @@
 export const countProductPlus = (count) => {
   return {
     type: "PLUS",
-    payload: fetch("http://localhost:3000/product/" + count)
-      .then((response) => response.json())
-      .then((data) => {
-        return data;
-      }),
+    payload: count
   };
 };
+
+export const deleteProduct = (id) => {
+  return {
+    type: "DELETE-PRODUCT",
+    payload: id
+  }
+}

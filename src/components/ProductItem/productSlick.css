@@ -1,0 +1,27 @@
+.slick-slider {
+  position: relative;
+  display: block;
+}
+
+.slick-list {
+  padding: 50px 0;
+  display: block;
+  overflow: hidden;
+
+}
+
+.slick-track {
+  position: relative;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.slick-slide {
+    height: 100%;
+    width: 100%;
+}
+
+.slick-slider img {
+    height: 346px;
+}

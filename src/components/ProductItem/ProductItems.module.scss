@@ -1,9 +1,11 @@
-@import "../assets/styles/index.scss";
+@import "../../assets/styles/index.scss";
 
 .productItems {
   height: 100%;
+  width: 100%;
   @include flex-col;
   border-radius: $border-radius--img;
+  background-color: $theme-color;
 
   img {
     width: 100%;
@@ -13,7 +15,7 @@
   }
 
   .infProducts {
-    height: 45%;
+    height: 40%;
     padding: 10px 15px;
     text-align: start;
     margin-top: auto;
@@ -59,7 +61,18 @@
         align-items: center;
         border: none;
       }
-      
+
+      #bought {
+        background-color: rgba(52, 180, 52, 0.975);
+      }
     }
+  }
+}
+
+.slides {
+  width: 100%;
+
+  @media only screen and (max-width: 920px) {
+    padding: 0 2%;
   }
 }
