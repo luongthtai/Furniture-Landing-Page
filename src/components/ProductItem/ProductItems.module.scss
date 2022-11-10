@@ -32,6 +32,8 @@
         word-break: break-all;
         font-size: $h4-fontsize;
         color: $plus-color;
+        overflow: hidden;
+        white-space: nowrap;
       }
 
       p {

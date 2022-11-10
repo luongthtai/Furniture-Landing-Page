@@ -57,34 +57,7 @@ export default function Products() {
         </div>
       </div>
 
-      {/* <div
-        id={styles.listProduct}
-        style={{
-          gridTemplateColumns: "repeat(" + productItems.length + ", 286px)",
-        }}
-      >
-        {productItems.map((item) => (
-          <ProductItems
-            key={item._id}
-            id={item._id}
-            name={item.name}
-            type={item.categories}
-            price={item.price}
-            imgProduct={item.img}
-            item={item}
-            status={item.__v}
-          />
-        ))}
-      </div> */}
-
       <ProductItems product={productItems} />
-
-      {/* <span id={styles.next} onClick={handleClickNext}>
-        <i className="fa-solid fa-arrow-right"></i>
-      </span>
-      <span id={styles.prev} onClick={handleClickPrev}>
-        <i className="fa-solid fa-arrow-left"></i>
-      </span> */}
 
       <button type="button" id={styles.viewAll}>
         View All

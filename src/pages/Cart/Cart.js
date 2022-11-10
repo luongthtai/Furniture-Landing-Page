@@ -9,7 +9,7 @@ export default function Cart() {
   return (
     <>
       <Nav backgroundColor="#e58411" colorNumber="#0d1b39" position="inherit" />
-      <CartContent cartItems={cartItems}/>
+      <CartContent cartItems={cartItems} />
       <Footer />
     </>
   );
