@@ -44,11 +44,10 @@
           color: red;
         }
 
-        .quantity {
+        #quantity {
           text-align: center;
-          width: 80px;
-          padding: 10px 0;
-          border: 1px solid $typeProduct--color;
+          width: 30px;
+          display: inline-block;
         }
       }
     }

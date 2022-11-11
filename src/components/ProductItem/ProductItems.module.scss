@@ -40,6 +40,14 @@
         margin: 0;
         color: $typeProduct--color;
       }
+
+      .vote {
+        @include dp-flex;
+
+        i {
+          margin-left: 4px;
+        }
+      }
     }
 
     .buy {

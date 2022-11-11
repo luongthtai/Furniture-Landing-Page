@@ -60,7 +60,7 @@ export default function ProductItems(props) {
                 : "Lamp"}
             </p>
             <h4 className={styles.nameProducts}>{item.name}</h4>
-            <div className={styles.vote}>xxxxx</div>
+            <div className={styles.vote}>{item.star}<i class="fa-solid fa-star"></i></div>
           </div>
 
           <div className={styles.buy}>

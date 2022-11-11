@@ -13,6 +13,14 @@ export default function Shop() {
     description: "",
   });
 
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch("https://fe21-db.herokuapp.com/furniture")
+      .then((res) => res.json())
+      .then((data) => setData(data));
+  }, [data]);
+
   const handleChange = (e) => {
     setPostData({ ...postData, [e.target.name]: e.target.value });
   };
@@ -29,7 +37,7 @@ export default function Shop() {
 
   const handleSubmit = (e) => {
     handleData();
-    alert("Thêm thành công")
+    alert("Thêm thành công");
     e.preventDefault();
   };
 
@@ -104,29 +112,19 @@ export default function Shop() {
         </form>
       </div>
 
-      <AllProduct />
+      <AllProduct data={data} />
 
       <Footer />
     </>
   );
 }
 
-const AllProduct = () => {
-  const [product, setProduct] = useState([]);
+const AllProduct = ({ data }) => {
   const [toggle, setToggle] = useState(true);
 
   const viewAll = (value) => {
     setToggle(!toggle);
-    fetch("https://fe21-db.herokuapp.com/furniture")
-      .then((res) => res.json())
-      .then((data) => setProduct(data));
   };
-
-  useEffect(() => {
-    fetch("https://fe21-db.herokuapp.com/furniture")
-      .then((res) => res.json())
-      .then((data) => setProduct(data));
-  }, []);
 
   const handleClick = (value) => {
     const dltResult = window.confirm("Chắc chưa bạn êi");
@@ -156,7 +154,7 @@ const AllProduct = () => {
               <th>Price</th>
               <th></th>
             </tr>
-            {product.map((item) => (
+            {data.map((item) => (
               <tr key={item._id}>
                 <th>{item._id}</th>
                 <th>{item.name}</th>

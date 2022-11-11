@@ -4,25 +4,41 @@ import { deleteProduct } from "../../redux/actition/countProduct";
 import styles from "./CartContent.module.scss";
 
 export default function CartContent({ cartItems }) {
+  const dispatch = useDispatch();
+  
   const [subTotal, setSubTotal] = useState(0);
-
+  
   const bought = useSelector((state) => state.count.bought);
-
+  
   const [totals, setTotals] = useState({
     shipping: "",
     totals: subTotal,
   });
 
+  const [quantity, setQuantity] = useState(1);
+
+  const isNext = () => {
+    setQuantity(quantity + 1);
+  };
+
+  const isPrev = () => {
+    if (quantity < 2) {
+      setQuantity(1);
+    } else {
+      setQuantity(quantity - 1);
+    }
+  };
+
   useEffect(() => {
     var tien = 0;
     bought.map((item) => (tien += item.price));
 
-    setSubTotal(tien);
+    setSubTotal(tien * quantity);
 
     setTotals({
       totals: subTotal,
     });
-  }, [bought, subTotal]);
+  }, [bought, subTotal, quantity]);
 
   const handleSubmit = (e) => {
     setTotals({
@@ -30,8 +46,6 @@ export default function CartContent({ cartItems }) {
       shipping: e.target.name,
     });
   };
-
-  const dispatch = useDispatch();
 
   const submit = (e) => {
     console.log(totals);
@@ -72,9 +86,11 @@ export default function CartContent({ cartItems }) {
                   {item.price}
                 </td>
                 <td>
-                  <input type="number" className={styles.quantity} />
+                  <button onClick={isPrev}>-</button>
+                  <span id={styles.quantity}>{quantity}</span>
+                  <button onClick={isNext}>+</button>
                 </td>
-                <td id={styles.subTotal}>{item.price}</td>
+                <td id={styles.subTotal}>{item.price * quantity}</td>
               </tr>
             ))}
           </tbody>
