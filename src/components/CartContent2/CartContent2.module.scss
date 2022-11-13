@@ -1,0 +1,79 @@
+@import "../../assets/styles/index.scss";
+
+#cartContent {
+  display: flex;
+  padding: 50px 5%;
+  justify-content: space-between;
+  width: 100%;
+
+  @media only screen and (max-width: 1200px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 2%;
+  }
+
+  h2 {
+    border-bottom: 1px solid $typeProduct--color;
+    padding-bottom: 10px;
+  }
+
+  .shoppingCart {
+    border-right: 1px solid $typeProduct--color;
+    width: 65%;
+    padding: 0 5%;
+
+    @media only screen and (max-width: 1200px) {
+      border-right: none;
+      width: 100%;
+    }
+
+    table {
+      width: 100%;
+      margin: 50px 0;
+      text-align: center;
+
+      td {
+        border-bottom: 1px solid $typeProduct--color;
+        padding: 20px;
+      }
+    }
+  }
+
+  .cartContentTotal {
+    width: 35%;
+    padding: 0 5%;
+    @include flex-col;
+
+    @media only screen and (max-width: 1200px) {
+      width: 70%;
+    }
+
+    .containerTotals {
+      .subtotal,
+      .formRadio,
+      .total {
+        @include flex-spBetween;
+      }
+
+      .shipping {
+        @include flex-col;
+        text-align: end;
+
+        input {
+          margin-left: 10px;
+        }
+      }
+
+      button {
+        margin-top: 20px;
+        width: 100%;
+        background-color: $plus-color;
+        border: none;
+        color: $theme-color;
+        padding: 10px;
+        border-radius: 5px;
+      }
+    }
+  }
+}

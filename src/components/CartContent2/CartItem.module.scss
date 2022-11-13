@@ -1,0 +1,28 @@
+@import "../../assets/styles/index.scss";
+
+table {
+    text-align: center;
+
+    th {
+      padding: 0 20px;
+    }
+
+    td {
+      border-bottom: 1px solid $typeProduct--color;
+
+      .deleteProduct {
+        cursor: pointer;
+        color: red;
+      }
+
+      #quantity {
+        text-align: center;
+        width: 30px;
+        display: inline-block;
+      }
+    }
+
+    img {
+        width: 100%;
+      }
+  }

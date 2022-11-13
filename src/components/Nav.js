@@ -39,23 +39,33 @@ export default function Nav(props) {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/about" style={({ isActive }) => (isActive ? activeStyle : undefined)} >About Us</NavLink>
+          <NavLink
+            to="/about"
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          >
+            About Us
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/contact" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Contact</NavLink>
+          <NavLink
+            to="/contact"
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          >
+            Contact
+          </NavLink>
         </li>
       </ul>
 
       <div id={styles.bag}>
         <Link to="/cart">
           <i className="fa-solid fa-bag-shopping"></i>
+          <p
+            id={styles.productNumber}
+            style={{ backgroundColor: props.colorNumber }}
+          >
+            {numberProduct.length}
+          </p>
         </Link>
-        <p
-          id={styles.productNumber}
-          style={{ backgroundColor: props.colorNumber }}
-        >
-          {numberProduct.length}
-        </p>
       </div>
     </div>
   );

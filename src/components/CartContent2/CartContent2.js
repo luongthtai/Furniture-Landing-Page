@@ -1,42 +1,27 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { deleteProduct } from "../../redux/actition/countProduct";
-import styles from "./CartContent.module.scss";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import styles from "./CartContent2.module.scss";
+import CartItem from "./CartItem";
 
-export default function CartContent({ cartItems }) {
-  const dispatch = useDispatch();
-  
+export default function CartContent2() {
+  const bought = useSelector((state) => state.count.bought);
+
   const [subTotal, setSubTotal] = useState(0);
-  
+
+  const valueTotal = (value) => {
+    console.log(value)
+    setSubTotal(value)
+  }
+
   const [totals, setTotals] = useState({
     shipping: "",
     totals: subTotal,
   });
 
-  const [quantity, setQuantity] = useState(1);
-
-  const isNext = () => {
-    setQuantity(quantity + 1);
+  const submit = (e) => {
+    e.preventDefault();
+    console.log(totals);
   };
-
-  const isPrev = () => {
-    if (quantity < 2) {
-      setQuantity(1);
-    } else {
-      setQuantity(quantity - 1);
-    }
-  };
-
-  useEffect(() => {
-    var tien = 0;
-    cartItems.map((item) => (tien += item.price));
-
-    setSubTotal(tien * quantity);
-
-    setTotals({
-      totals: subTotal,
-    });
-  }, [cartItems, subTotal, quantity]);
 
   const handleSubmit = (e) => {
     setTotals({
@@ -45,15 +30,10 @@ export default function CartContent({ cartItems }) {
     });
   };
 
-  const submit = (e) => {
-    console.log(totals);
-    e.preventDefault();
-  };
-
   return (
-    <div className={styles.cartContent}>
-      <div className={styles.shoppingCart}>
-        <h2>Shopping Cart</h2>
+    <div id={styles.cartContent}>
+      <div className={styles.cartContentProduct}>
+      <h2>Shopping Cart</h2>
         <table>
           <tbody>
             <tr className={styles.tbOfContent}>
@@ -64,38 +44,14 @@ export default function CartContent({ cartItems }) {
               <th>Quantity</th>
               <th>Subtotal</th>
             </tr>
-
-            {cartItems.map((item) => (
-              <tr key={item._id}>
-                <td>
-                  <div
-                    className={styles.deleteProduct}
-                    onClick={() => dispatch(deleteProduct(item._id))}
-                  >
-                    x
-                  </div>
-                </td>
-                <td>
-                  <img src={item.img} alt="product" />
-                </td>
-                <td>{item.name}</td>
-                <td>
-                  <i className="fa-solid fa-dollar-sign"></i>
-                  {item.price}
-                </td>
-                <td>
-                  <button onClick={isPrev}>-</button>
-                  <span id={styles.quantity}>{quantity}</span>
-                  <button onClick={isNext}>+</button>
-                </td>
-                <td id={styles.subTotal}>{item.price * quantity}</td>
-              </tr>
+            {bought.map((item) => (
+              <CartItem cartItem={item} key={item._id} valueTotal={valueTotal}/>
             ))}
           </tbody>
         </table>
       </div>
 
-      <div className={styles.cartTotals}>
+      <div className={styles.cartContentTotal}>
         <h2>Cart Totals</h2>
 
         <form className={styles.containerTotals} onSubmit={(e) => submit(e)}>
