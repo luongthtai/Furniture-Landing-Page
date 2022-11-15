@@ -19,7 +19,7 @@ export default function Shop() {
     fetch("https://fe21-db.herokuapp.com/furniture")
       .then((res) => res.json())
       .then((data) => setData(data));
-  }, [data]);
+  }, []);
 
   const handleChange = (e) => {
     setPostData({ ...postData, [e.target.name]: e.target.value });
@@ -32,7 +32,7 @@ export default function Shop() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(postData),
-    });
+    })
   };
 
   const handleSubmit = (e) => {

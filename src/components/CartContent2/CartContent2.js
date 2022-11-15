@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import styles from "./CartContent2.module.scss";
 import CartItem from "./CartItem";
@@ -6,17 +6,34 @@ import CartItem from "./CartItem";
 export default function CartContent2() {
   const bought = useSelector((state) => state.count.bought);
 
-  const [subTotal, setSubTotal] = useState(0);
+  const allProduct = (value) => {
+    let all = 0
 
-  const valueTotal = (value) => {
-    console.log(value)
-    setSubTotal(value)
+    all += value
+
+    console.log("hihi",all)
   }
+
+  // const price = useSelector(state => state.count.totals)
+
+  const [subTotal, setSubTotal] = useState(0);
 
   const [totals, setTotals] = useState({
     shipping: "",
     totals: subTotal,
   });
+
+  useEffect(() => {
+    let tien = 0;
+
+    if (bought === []) {
+      setSubTotal(0);
+    }
+
+    bought
+      ? bought.map((item) => setSubTotal((tien += item.price)))
+      : setSubTotal(0);
+  }, [bought, subTotal]);
 
   const submit = (e) => {
     e.preventDefault();
@@ -33,7 +50,7 @@ export default function CartContent2() {
   return (
     <div id={styles.cartContent}>
       <div className={styles.cartContentProduct}>
-      <h2>Shopping Cart</h2>
+        <h2>Shopping Cart</h2>
         <table>
           <tbody>
             <tr className={styles.tbOfContent}>
@@ -45,7 +62,7 @@ export default function CartContent2() {
               <th>Subtotal</th>
             </tr>
             {bought.map((item) => (
-              <CartItem cartItem={item} key={item._id} valueTotal={valueTotal}/>
+              <CartItem cartItem={item} key={item._id} price={allProduct}/>
             ))}
           </tbody>
         </table>

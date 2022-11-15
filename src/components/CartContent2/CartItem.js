@@ -1,21 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import styles from "./CartItem.module.scss";
 import { deleteProduct } from "../../redux/actition/countProduct";
 
-export default function CartItem({ cartItem, valueTotal }) {
+export default function CartItem({ cartItem, price }) {
   const dispatch = useDispatch();
+
+  const [subTotal, setSubTotal] = useState(0);
+
   const [quantity, setQuantity] = useState(1);
 
-  const handleChange = (e) => {
-    valueTotal(cartItem.price * quantity)
-  };
+  useEffect(() => {
+    setSubTotal(cartItem.price * quantity);
 
-  const plusQuantity = () => {
+  }, [subTotal, quantity, cartItem, price]);
+  
+  price(subTotal)
+  
+  const plusQuantity = (value) => {
     setQuantity(quantity + 1);
   };
 
-  const prevQuantity = () => {
+  const prevQuantity = (value) => {
     setQuantity(quantity - 1);
 
     if (quantity < 2) {
@@ -24,7 +30,7 @@ export default function CartItem({ cartItem, valueTotal }) {
   };
 
   return (
-    <tr key={cartItem._id}>
+    <tr key={cartItem._id} id={styles.cartItem}>
       <td>
         <div
           className={styles.deleteProduct}
@@ -42,13 +48,13 @@ export default function CartItem({ cartItem, valueTotal }) {
         {cartItem.price}
       </td>
       <td>
-        <button onClick={prevQuantity}>-</button>
+        <button onClick={() => prevQuantity(subTotal)}>-</button>
         <span id={styles.quantity}>{quantity}</span>
-        <button onClick={plusQuantity}>+</button>
+        <button onClick={() => plusQuantity(subTotal)}>+</button>
       </td>
-      <td id={styles.subTotal} onClick={handleChange}>
+      <td id={styles.subTotal}>
         <i className="fa-solid fa-dollar-sign"></i>
-        {cartItem.price * quantity}
+        {subTotal}
       </td>
     </tr>
   );

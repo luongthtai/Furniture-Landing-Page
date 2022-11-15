@@ -7,6 +7,7 @@ import "./productSlick.css"
 import "./product.css"
 
 export default function ProductItems(props) {
+
   const dispatch = useDispatch();
   const settings = {
     dots: false,
@@ -46,7 +47,7 @@ export default function ProductItems(props) {
 
       {props.product.map((item) => (
         <div className={styles.productItems} key={item._id}>
-        <img src={item.img} alt={item.name} />
+        <img src={item.img} alt={item.name} loading="lazy"/>
 
         <div className={styles.infProducts}>
           <div className={styles.infPdtItems}>
