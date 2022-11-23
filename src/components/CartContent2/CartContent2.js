@@ -6,17 +6,7 @@ import CartItem from "./CartItem";
 export default function CartContent2() {
   const bought = useSelector((state) => state.count.bought);
 
-  const allProduct = (value) => {
-    let all = 0
-
-    all += value
-
-    console.log("hihi",all)
-  }
-
-  // const price = useSelector(state => state.count.totals)
-
-  const [subTotal, setSubTotal] = useState(0);
+  const [subTotal, setSubTotal] = useState();
 
   const [totals, setTotals] = useState({
     shipping: "",
@@ -26,25 +16,21 @@ export default function CartContent2() {
   useEffect(() => {
     let tien = 0;
 
-    if (bought === []) {
-      setSubTotal(0);
-    }
+    bought.map((item) => (tien += item.__v * item.price));
 
-    bought
-      ? bought.map((item) => setSubTotal((tien += item.price)))
-      : setSubTotal(0);
+    console.log(tien);
+
+    setSubTotal(tien);
+
+    setTotals({
+      ...totals,
+      totals: subTotal,
+    });
   }, [bought, subTotal]);
 
   const submit = (e) => {
     e.preventDefault();
     console.log(totals);
-  };
-
-  const handleSubmit = (e) => {
-    setTotals({
-      totals: subTotal + Number(e.target.value),
-      shipping: e.target.name,
-    });
   };
 
   return (
@@ -62,7 +48,7 @@ export default function CartContent2() {
               <th>Subtotal</th>
             </tr>
             {bought.map((item) => (
-              <CartItem cartItem={item} key={item._id} price={allProduct}/>
+              <CartItem cartItem={item} key={item._id} />
             ))}
           </tbody>
         </table>
@@ -78,45 +64,6 @@ export default function CartContent2() {
               <i className="fa-solid fa-dollar-sign"></i>
               {subTotal}
             </p>
-          </div>
-
-          <div className={styles.formRadio}>
-            <p>Shipping</p>
-
-            <div className={styles.shipping}>
-              <label>
-                Free Ship
-                <input
-                  name="shipping"
-                  type="radio"
-                  value={0}
-                  onChange={handleSubmit}
-                  required
-                />
-              </label>
-
-              <label>
-                Flat Rate: 10.00
-                <input
-                  name="shipping"
-                  type="radio"
-                  value={10}
-                  onChange={handleSubmit}
-                  required
-                />
-              </label>
-
-              <label>
-                Pickup
-                <input
-                  name="shipping"
-                  type="radio"
-                  value={0}
-                  onChange={handleSubmit}
-                  required
-                />
-              </label>
-            </div>
           </div>
 
           <div className={styles.total}>

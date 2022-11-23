@@ -12,9 +12,16 @@ export const deleteProduct = (id) => {
   }
 }
 
-export const plusProduct = (id, quantity) => {
+export const plusProduct = (item) => {
   return {
     type: "PLUS-PRODUCT",
-    payload: {id, quantity}
+    payload: item
+  }
+}
+
+export const prevProduct = (item) => {
+  return {
+    type: "PREV-PRODUCT",
+    payload: item
   }
 }

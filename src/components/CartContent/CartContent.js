@@ -5,9 +5,9 @@ import styles from "./CartContent.module.scss";
 
 export default function CartContent({ cartItems }) {
   const dispatch = useDispatch();
-  
+
   const [subTotal, setSubTotal] = useState(0);
-  
+
   const [totals, setTotals] = useState({
     shipping: "",
     totals: subTotal,
@@ -15,16 +15,9 @@ export default function CartContent({ cartItems }) {
 
   const [quantity, setQuantity] = useState(1);
 
-  const isNext = () => {
+  const isNext = (item) => {
     setQuantity(quantity + 1);
-  };
-
-  const isPrev = () => {
-    if (quantity < 2) {
-      setQuantity(1);
-    } else {
-      setQuantity(quantity - 1);
-    }
+    console.log(item._id, quantity + 1);
   };
 
   useEffect(() => {
@@ -33,17 +26,27 @@ export default function CartContent({ cartItems }) {
 
     setSubTotal(tien * quantity);
 
+    if (quantity < 2) {
+      setQuantity(1);
+    }
+
     setTotals({
       totals: subTotal,
     });
   }, [cartItems, subTotal, quantity]);
 
-  const handleSubmit = (e) => {
-    setTotals({
-      totals: subTotal + Number(e.target.value),
-      shipping: e.target.name,
-    });
+  const isPrev = (item) => {
+    console.log(item._id, quantity);
+
+    setQuantity(quantity - 1);
   };
+
+  // const handleSubmit = (e) => {
+  //   setTotals({
+  //     totals: subTotal + Number(e.target.value),
+  //     shipping: e.target.name,
+  //   });
+  // };
 
   const submit = (e) => {
     console.log(totals);
@@ -84,9 +87,9 @@ export default function CartContent({ cartItems }) {
                   {item.price}
                 </td>
                 <td>
-                  <button onClick={isPrev}>-</button>
+                  <button onClick={() => isPrev(item)}>-</button>
                   <span id={styles.quantity}>{quantity}</span>
-                  <button onClick={isNext}>+</button>
+                  <button onClick={() => isNext(item)}>+</button>
                 </td>
                 <td id={styles.subTotal}>{item.price * quantity}</td>
               </tr>
@@ -107,7 +110,7 @@ export default function CartContent({ cartItems }) {
             </p>
           </div>
 
-          <div className={styles.formRadio}>
+          {/* <div className={styles.formRadio}>
             <p>Shipping</p>
 
             <div className={styles.shipping}>
@@ -144,7 +147,7 @@ export default function CartContent({ cartItems }) {
                 />
               </label>
             </div>
-          </div>
+          </div> */}
 
           <div className={styles.total}>
             <p>Total</p>

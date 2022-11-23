@@ -1,5 +1,6 @@
 const initialState = {
   bought: [],
+  newBought: [],
 };
 
 export const countProductReducer = (state = initialState, action) => {
@@ -21,6 +22,10 @@ export const countProductReducer = (state = initialState, action) => {
         return false;
       });
 
+      state.bought.map((item) => {
+        return (item.__v = 1);
+      });
+
       return {
         ...state,
         bought: unique,
@@ -35,21 +40,27 @@ export const countProductReducer = (state = initialState, action) => {
       };
 
     case "PLUS-PRODUCT":
-      let subTotal = 0;
+      state.bought.map((item) => {
+        if (item._id === action.payload._id) {
+          item.__v < 1 ? (item.__v = 1) : (item.__v = item.__v + 1);
+        }
+        return state.bought;
+      });
 
-      // console.log(action.payload);
-
-      // state.bought.map((item) => {
-      //   if (item._id === action.payload.id)
-      //     return item.price * action.payload.quantity
-      // });
-
-      state.bought.map((item) => subTotal += item.price)
-
-      console.log(subTotal);
       return {
         ...state,
-        totals: subTotal,
+      };
+
+    case "PREV-PRODUCT":
+      state.bought.map((item) => {
+        if (item._id === action.payload._id) {
+          item.__v < 2 ? (item.__v = 1) : (item.__v = item.__v - 1);
+        }
+        return state.bought;
+      });
+
+      return {
+        ...state,
       };
 
     default:
