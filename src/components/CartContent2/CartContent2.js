@@ -6,11 +6,8 @@ import CartItem from "./CartItem";
 export default function CartContent2() {
   const bought = useSelector((state) => state.count.bought);
 
-  const [subTotal, setSubTotal] = useState();
-
   const [totals, setTotals] = useState({
-    shipping: "",
-    totals: subTotal,
+    totals: 0,
   });
 
   useEffect(() => {
@@ -20,13 +17,10 @@ export default function CartContent2() {
 
     console.log(tien);
 
-    setSubTotal(tien);
-
     setTotals({
-      ...totals,
-      totals: subTotal,
+      totals: tien,
     });
-  }, [bought, subTotal]);
+  }, [bought]);
 
   const submit = (e) => {
     e.preventDefault();
@@ -58,13 +52,6 @@ export default function CartContent2() {
         <h2>Cart Totals</h2>
 
         <form className={styles.containerTotals} onSubmit={(e) => submit(e)}>
-          <div className={styles.subtotal}>
-            <p>Sub Total</p>
-            <p>
-              <i className="fa-solid fa-dollar-sign"></i>
-              {subTotal}
-            </p>
-          </div>
 
           <div className={styles.total}>
             <p>Total</p>

@@ -8,7 +8,7 @@ export default function Products() {
   const [select, setSelect] = useState(1);
 
   useEffect(() => {
-    fetch("https://fe21-db.herokuapp.com/furniture")
+    fetch("https://fe21-db.vercel.app/furniture")
       .then((response) => response.json())
       .then((data) => setData(data));
   }, []);

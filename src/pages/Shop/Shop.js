@@ -16,7 +16,7 @@ export default function Shop() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("https://fe21-db.herokuapp.com/furniture")
+    fetch("https://fe21-db.vercel.app/furniture")
       .then((res) => res.json())
       .then((data) => setData(data));
   }, []);
@@ -26,7 +26,7 @@ export default function Shop() {
   };
 
   const handleData = () => {
-    fetch("https://fe21-db.herokuapp.com/furniture/create", {
+    fetch("https://fe21-db.vercel.app/furniture/create", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -130,7 +130,7 @@ const AllProduct = ({ data }) => {
     const dltResult = window.confirm("Chắc chưa bạn êi");
 
     if (dltResult) {
-      fetch("https://fe21-db.herokuapp.com/furniture/" + value, {
+      fetch("https://fe21-db.vercel.app/furniture/" + value, {
         method: "DELETE",
       });
     }
@@ -168,7 +168,7 @@ const AllProduct = ({ data }) => {
                     : "Lamp"}
                 </th>
                 <th>{item.price}</th>
-                <th onClick={() => handleClick(item._id)}>
+                <th onClick={() => handleClick(item._id)} style={{cursor: "pointer"}}>
                   <span>Delete</span>
                 </th>
               </tr>

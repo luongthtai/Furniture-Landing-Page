@@ -7,7 +7,7 @@ export default function ClientReview() {
   const [client, setClient] = useState([]);
 
   useEffect(() => {
-    fetch("https://fe21-db.herokuapp.com/furniture/review")
+    fetch("https://fe21-db.vercel.app/furniture/review")
       .then((response) => response.json())
       .then((data) => setClient(data));
   }, []);
